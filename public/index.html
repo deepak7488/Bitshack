@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JungleeCoder</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- {{!-- -->
+    <!-- <link rel="icon" href=".../public/images/weather.png"> --}} -->
+    <!-- <link rel="icon" href="/images/weather.png"> -->
+</head>
+<!-- <button onclick="addelement();">Add Item</button> -->
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Problem Code</th>
+            <th>Problem Name</th>
+            <th>Difficulty Level</th>
+            <th>Topics</th>
+            <th>Acceptance Percentage</th>
+            <th>Popularity</th>
+            <th>Companies</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<body>
+    <script>
+        const baseurl = 'http://localhost:3000/hr?company=Amazon&sort=true'
+        const table = document.getElementById("tableBody")
+        getinfo()
+        async function getinfo() {
+            const res = await fetch(baseurl,
+                { method: 'GET' }
+            )
+            console.log(res)
+            const data = await res.json()
+            for (let i = 0; i < data.length; i++) {
+                tr = document.createElement('tr');
+                const lis = Object.keys(data[i])
+                for (let j = 0; j < 6; j++) {
+                    td = document.createElement('td');
+                    a = document.createElement('a')
+                    if (j == 1) {
+                        a.href = data[i]['Problem_Link']
+                        a.target = "_blank"
+                        a.innerHTML = data[i][lis[j + 1]]
+                        td.appendChild(a)
+                        tr.appendChild(td)
+                    }
+                    else {
+                        td.innerHTML = data[i][lis[j + 1]]
+                        tr.appendChild(td)
+                    }
+                }
+                var result = []
+                td = document.createElement('td');
+                for (var key in data[i][lis[7]])
+                    result.push([key, data[i][lis[7]][key]])
+                result = result.sort(function (a, b) {
+                    return b[1] - a[1];
+                })
+                result = result.slice(0, 6)
+                td.innerHTML = result
+                tr.appendChild(td)
+                // lis
+                // for (let j = 0; <min(10, Object.keys(data[i]).length); i++) {
+
+                // }
+                table.appendChild(tr)
+            }
+        }
+    </script>
+</body>
+
+</html>
