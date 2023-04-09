@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/analytics.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="web-header">
+        <h1 class="web-heading">Coder Analytics</h1>
+        <div class="user">
+            <div class="codername">
+                <div>
+                    <h5>Junglee CoderName: </h5>
+                </div>
+                <div>
+                    <h5 class="codercheck" id="username">Ansh Arora</h5>
+                </div>
+            </div>
+            <div class="coderID">
+                <div>
+                    <h5>CoderID: </h5>
+                </div>
+                <div>
+                    <h5 class="codercheck" id="coder_id">116ABSO9</h5>
+                </div>
+            </div>
+            <div class="date">
+                <div>
+                    <h5>Date of Joining: </h5>
+                </div>
+                <div>
+                    <h5 class="codercheck" id="Date">11.02.2022</h5>
+                </div>
+            </div>
+        </div>
+        <div class="web-header">
+            <!-- <h4 class="plot1-heading">Progress Graph:</h4> -->
+            <!-- <div class="plot1-dropdown" id="dropdown-div">
+                <select id="continent-dropdown">
+                    <option value="All">All</option>
+                    {% for i in np.append(['All'],data['Level'].unique()) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div> -->
+            <div class="plot1">
+                <!-- <div id="scatter-plot"></div> -->
+            </div>
+        </div>
+        <p class="web-heading2">Analysis of coder behavior</p>
+        <div class="Pies">
+            <div class="plot2-div">
+
+                <div class="web-headers1">
+                    <h4 class="plot1-heading">Level Wise Analysis</h4>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="web-headers1">
+                    <h4 class="plot1-heading">Topic Wise Analysis</h4>
+
+                    <div class="chart-container">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+
+                </div>
+                <div class="web-headers1">
+                    <h4 class="plot1-heading">Company Wise Analysis</h4>
+                    <div class="chart-container">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js/chart.js"></script>
+    <script src="./js/analytics.js"></script>
+</body>
+
+
+</html>

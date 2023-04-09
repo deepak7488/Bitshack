@@ -1,30 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+/* .navbar {
+    /* background-color: #1b1b1b; */
+/* } */
+/*  */
+#my {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.background {
+    background-color: #1b1b1b;
+    display: none;
+}
+
+/* Style the title element */
+#my h1 {
+    font-size: 3em;
+    color: #c04f03;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Rubik Iso', cursive; */
+    /* Add any other styling as desired */
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 250px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: black solid 1px;
+}
+
+.input {
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #4ee173;
+    color: white;
+    padding: 16px;
+    margin: 2px;
+    border-radius: 2px;
+
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.tt {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #4ee173;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    width: 100%;
+    border-bottom: 1px solid black;
+    /* margin-left: 5px; */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color: "#00B8A3";
+    /* display: block; */
+    display: inline-block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(67, 67, 63);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navigation {
+    margin-left: 10px, ;
+}
+
 .styled-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    /* margin: 25px 0; */
+    margin: 100px;
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
 }
 
 .styled-table thead tr {
     background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+    color: #030303;
+    text-align: center;
 }
 
-.styled-table th,
-.styled-table td {
+.styled-table th {
     padding: 12px 15px;
+    /* color: #f4f1ee; */
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #22218186;
 }
 
-.styled-table tbody tr {
+.styled-table td {
+    padding: 12px 12px;
+    color: #ffffff;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    border: 1px solid #ccc;
+    background-color: #000000;
+}
+
+
+.my-animation {
+    animation-name: my-animation;
+    animation-duration: 1s;
+}
+
+@keyframes my-animation {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
+} */
+.styled-table tbody ttr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+.styled-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
 }
+
+/* @keyframes blink {
+    50% {
+        background-color: #ffa500;
+    }
+}
+
+.styled-table tbody td {
+    animation: blink 1s infinite;
+} */
+
+/* .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} */
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
@@ -33,4 +186,55 @@
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+.pagination {
+    align-items: center;
+    position: absolute;
+    left: 40%;
+    padding-bottom: 15px;
+}
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top: 50vh;
+
+}
+
+.context h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
 }

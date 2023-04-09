@@ -53,8 +53,15 @@ const userSchema = new mongoose.Schema({
         type: Buffer
     },
     done_questions: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Question"
+        _id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Question"
+        },
+        timestamp: {
+            type: Date,
+            default: Date.now
+        },
+
     }]
 }, {
     timestamps: true
