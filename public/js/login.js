@@ -6,7 +6,7 @@ login[0].addEventListener('click', async function (e) {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
     try {
-        let res = await fetch('http://localhost:3000/users/login', {
+        let res = await fetch('http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users/login', {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
@@ -32,7 +32,7 @@ login[0].addEventListener('click', async function (e) {
             // console.log(data.user.name)
             // window.alert("Sucesss! User Created")
             // console.log(JSON.parse(localStorage.getItem('user')).name)
-            window.location = "http://localhost:3000/user";
+            window.location = "http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/user";
 
         }
     }
@@ -51,7 +51,7 @@ signup[0].addEventListener('click', async function (e) {
     console.log(email)
     console.log(password)
     try {
-        let res = await fetch('http://localhost:3000/users', {
+        let res = await fetch('http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users', {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
@@ -77,7 +77,7 @@ signup[0].addEventListener('click', async function (e) {
             localStorage.setItem('user', JSON.stringify(data.user))
             window.alert("Sucesss! User Created")
             console.log(localStorage.getItem('loginToken'))
-            window.location = "http://localhost:3000/user";
+            window.location = "http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/user";
 
         }
     }

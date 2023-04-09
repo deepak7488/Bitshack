@@ -34,7 +34,7 @@ if (user) {
 // date_of_joining.textContent = user.t
 async function get_data() {
     if (user) {
-        const link = 'http://localhost:3000/users/me'
+        const link = 'http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users/me'
         console.log(link)
         let res = await fetch(link, {
             method: 'GET',

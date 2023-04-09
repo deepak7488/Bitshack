@@ -1,4 +1,4 @@
-const baseurl = 'http://localhost:3000/getquestions?limit=50'
+const baseurl = 'http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/getquestions?limit=50'
 const table = document.getElementById("tableBody")
 const tablehead = document.getElementById("tableHead")
 const ul = document.getElementById("pagination")
@@ -30,7 +30,7 @@ if (user) {
     // welcomeMessage.style.cssText=
     // Add the welcome message to the HTML document
     lol.appendChild(welcomeMessage);
-    // window.location = "http://localhost:3000"
+    // window.location = "http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/"
 }
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
@@ -47,7 +47,7 @@ window.onclick = function (event) {
 }
 async function get_comp() {
     console.log("Heeloo")
-    const res = await fetch('http://localhost:3000/getquestions',
+    const res = await fetch('http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/getquestions',
         { method: 'GET' }
     )
     console.log("Heeloo")
@@ -119,7 +119,7 @@ const totalPage = Math.floor(allPages / pagesize) + (allPages % pagesize != 0);
 let currpage = 1;
 elem(1)
 async function logout() {
-    const link = 'http://localhost:3000/users/logout'
+    const link = 'http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users/logout'
     console.log(link)
     let res = await fetch(link, {
         method: 'POST',
@@ -132,7 +132,7 @@ async function logout() {
         localStorage.removeItem('user');
         localStorage.removeItem('loginToken');
     }
-    window.location = "http://localhost:3000";
+    window.location = "http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/";
 }
 // getinfo()
 async function elem(page) {
@@ -312,7 +312,7 @@ async function getinfo(link = baseurl) {
                 console.log(id)
                 // console
                 if (user) {
-                    const link = 'http://localhost:3000/users/' + id
+                    const link = 'http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users/' + id
                     console.log(link)
                     let res = await fetch(link, {
                         method: 'POST',
@@ -338,7 +338,7 @@ async function getinfo(link = baseurl) {
                     const id = parentElement.parentNode.getAttribute("data-object-id")
                     console.log(id)
                     console.log("*88888*")
-                    const link = 'http://localhost:3000/users/del/' + id
+                    const link = 'http://ec2-13-127-88-43.ap-south-1.compute.amazonaws.com:3000/users/del/' + id
                     console.log(link)
                     let res = await fetch(link, {
                         method: 'POST',
