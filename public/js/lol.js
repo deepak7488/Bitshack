@@ -79,6 +79,7 @@ async function get_comp() {
     var dropdownContent = document.getElementById("myDropdown");
     console.log(topics)
     company.forEach(function (value) {
+        console.log(value)
         var link = document.createElement("a");
         link.href = "#";
         link.textContent = value;
